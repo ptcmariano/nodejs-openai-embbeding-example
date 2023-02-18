@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-openai-embbeding-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webcrawler": "node webcrawler.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptcmariano/nodejs-openai-embbeding-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ptcmariano/nodejs-openai-embbeding-example/issues"
+  },
+  "homepage": "https://github.com/ptcmariano/nodejs-openai-embbeding-example#readme",
+  "dependencies": {
+    "crawler": "^1.4.0"
+  }
+}
