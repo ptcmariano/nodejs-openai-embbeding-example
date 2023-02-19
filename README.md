@@ -14,3 +14,7 @@
 ## run scripts
 
  ``npm run webcrawler``
+
+## contribute
+
+ feel free to contribute to the project, add a issue or pull request :]

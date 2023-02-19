@@ -1,4 +1,5 @@
 const Crawler = require('crawler');
+const fs = require('fs');
 
 const domain = 'https://criancafelizdesorocaba.org.br/';
 
@@ -13,7 +14,7 @@ const crawl = new Crawler({
             const $ = res.$;
             searchLinksToRead($);
             queuePagesToRead();
-            // todo: get all content
+            saveTextPage($('#content').text(),$('title').text())
         }
         done();
     }
@@ -52,3 +53,25 @@ const queuePagesToRead = () => {
         }
     });
 }
+
+const saveTextPage = (text, page) => {
+    // Create a directory to store the text files
+    if (!fs.existsSync("text/")) {
+        fs.mkdirSync("text/");
+    }
+    if (!fs.existsSync("text/"+page.slugify("_"))) {
+        fs.mkdirSync("text/"+page.slugify("_"));
+    }
+    // todo generate files
+}
+
+String.prototype.slugify = function (separator = "-") {
+    return this
+        .toString()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9 ]/g, '')
+        .replace(/\s+/g, separator);
+};
