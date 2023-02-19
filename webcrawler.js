@@ -6,29 +6,23 @@ let pagesToSearch = [];
 
 const c = new Crawler({
     rateLimit: 1000,
-    // This will be called for each crawled page
     callback: (error, res, done) => {
         if (error) {
             console.log(error);
         } else {
             const $ = res.$;
-            // $ is Cheerio by default
-            //a lean implementation of core jQuery designed specifically for the server
-            //console.log(
-                $("body").find("a[href^='" + domain + "']").each(function(i, link){
-                    //console.log($(link).attr('href'), ' >>> link ', i);
-                    const samelink = pagesToSearch.find(search => search == link);
-                    if (!samelink) {
-                        pagesToSearch.push($(link).attr('href'));
-                    }
-                    console.log(pagesToSearch)
-                })
-            //);
+            $("body").find("a[href^='" + domain + "']").each(function(i, link){
+                const samelink = pagesToSearch.find(search => search == $(link).attr('href'));
+                console.log($(link).attr('href'), samelink)
+                if (!samelink) {
+                    pagesToSearch.push($(link).attr('href'));
+                }
+                // todo: fill pages read
+            });
         }
         done();
     }
 });
 
-// Queue home page to get links to search
 c.queue(domain);
-// 
+// todo: function to get more pages to read
