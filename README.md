@@ -1,4 +1,4 @@
-# nodejs-openai-embbeding-example
+# nodejs-openai-embedding-example
 
  > example using opeanai nodejs package, like tutorial web questions and answers about your website
 
@@ -13,7 +13,19 @@
 
 ## run scripts
 
+ > step1
+
  ``npm run webcrawler``
+
+ > step2
+
+ ```
+ python -m venv env
+
+ env\Scripts\activate.bat
+
+ pip install -r requirements.txt
+ ```
 
 ## contribute
 
