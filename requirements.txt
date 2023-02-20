@@ -1,4 +1,5 @@
 matplotlib==3.6.3
 matplotlib-inline==0.1.6
+openai==0.26.1
 pandas==1.5.2
 tiktoken==0.1.2
