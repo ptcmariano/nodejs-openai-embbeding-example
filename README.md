@@ -1,6 +1,6 @@
 # nodejs-openai-embedding-example
 
- > example using opeanai nodejs package, like tutorial web questions and answers about your website
+ > example using nodejs package webcrawler to run: tutorial openai web questions and answers about your website
 
  > tutorial in python: https://platform.openai.com/docs/tutorials/web-qa-embeddings
 
