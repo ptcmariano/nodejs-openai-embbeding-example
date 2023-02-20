@@ -6,7 +6,7 @@
 
 ## steps to prepare
 
- * [] webcrawler
+ * [x] webcrawler
  * [] store index to embeddings
  * [] create context
  * [] run questions

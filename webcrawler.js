@@ -59,10 +59,9 @@ const saveTextPage = (text, page) => {
     if (!fs.existsSync("text/")) {
         fs.mkdirSync("text/");
     }
-    if (!fs.existsSync("text/"+page.slugify("_"))) {
-        fs.mkdirSync("text/"+page.slugify("_"));
-    }
-    // todo generate files
+    const writeStream = fs.createWriteStream("text/"+page.slugify("_")+".txt");
+    writeStream.write(remove_newlines(text));
+    writeStream.end();
 }
 
 String.prototype.slugify = function (separator = "-") {
@@ -75,3 +74,10 @@ String.prototype.slugify = function (separator = "-") {
         .replace(/[^a-z0-9 ]/g, '')
         .replace(/\s+/g, separator);
 };
+
+function remove_newlines(serie) {
+    serie = serie.replace(/\\n/g, ' ');
+    serie = serie.replace(/  /g, ' ');
+    serie = serie.replace(/\t+/g, ' ');
+    return serie;
+}
