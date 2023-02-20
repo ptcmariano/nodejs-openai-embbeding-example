@@ -7,9 +7,9 @@
 ## steps to prepare
 
  * [x] webcrawler
- * [] store index to embeddings
- * [] create context
- * [] run questions
+ * [x] store index to embeddings
+ * [x] create context
+ * [x] run questions
 
 ## run scripts
 
@@ -25,6 +25,24 @@
  env\Scripts\activate.bat
 
  pip install -r requirements.txt
+
+ python step2-text-to-csv.py
+ ```
+
+ > step3
+
+ ```
+ echo <API_KEY> > env\apikey
+
+ python step3-tokenization.py
+ ```
+
+ > step4
+
+ ```
+ # create question and change on functions call
+
+ python step4-run-question-with-context.py
  ```
 
 ## contribute
